@@ -136,10 +136,12 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
         //Extra Parameter für das SQL Query hinzufügen
         switch (Parameter) {
             case "DATE":
-                query += " order by anschaffungsdatum" ;
+                query += " order by anschaffungsdatum DESC";
                 break;
             case "LEISTUNG":
-                query += " order by leistunginkw";
+                query += " order by leistunginkw DESC";
+                break;
+            case "NONE":
                 break;
             default:
                 break;
