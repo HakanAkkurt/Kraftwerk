@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/view_completionstatus"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_alignBottom="@+id/view_leistungInKw"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="7dp"
+        android:visibility="invisible"
+        app:srcCompat="@android:drawable/checkbox_on_background" />
+
+    <ImageView
+        android:id="@+id/favorite_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="9dp"
+        android:visibility="invisible"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <TextView
+        android:text="TextView"
+        android:id="@+id/view_leistungInKw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view_anschaffungsdatum"
+        android:layout_toStartOf="@+id/view_completionstatus"
+        android:layout_marginEnd="12dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_anschaffungsdatum"
+        android:textSize="12sp"
+        android:layout_alignBottom="@+id/view_typDerErzeugungsanlage"
+        android:layout_toStartOf="@+id/view_leistungInKw"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_typDerErzeugungsanlage"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/favorite_icon"
+        android:layout_toEndOf="@+id/favorite_icon" />
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/menu_new_kraftwerk"
+    android:orderInCategory="100"
+    android:title="new Kraftwerk"
+    app:showAsAction="ifRoom"
+    android:icon="@android:drawable/ic_menu_add" />
+
+    <item android:title="Sortieren Datum"
+        android:orderInCategory="100"
+        android:id="@+id/sortDate"
+        app:showAsAction="never" />
+    <item android:title="Sortieren Leistung"
+        android:orderInCategory="101"
+        android:id="@+id/sortLeistung"
+        app:showAsAction="never" />
+    <item android:title="Gesamtleistung"
+        android:orderInCategory="101"
+        android:id="@+id/berechneGesamtleistung"
+        app:showAsAction="never" />
+    <item android:title="Alles löschen"
+        android:orderInCategory="102"
+        android:id="@+id/clearAll"
+        app:showAsAction="never" />
+</menu>

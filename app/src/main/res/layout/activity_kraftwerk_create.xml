@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_kraftwerk_create"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="hakan_akkurt.de.kraftwerk.KraftwerkCreate">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/bildDerAnlage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/view_typDerErzeugungsanlage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Typ der Erzeugungsanlage" />
+
+            <EditText
+                android:id="@+id/typDerErzeugungsanlage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Typ der Erzeugungsanlage"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/view_leistungInKw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leistung in KW" />
+
+            <EditText
+                android:id="@+id/leistungInKw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Leistung in KW"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/view_anschaffungsdatum"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:text="Anschaffungsdatum" />
+
+            <TextView
+                android:id="@+id/anschaffungsdatum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:ems="10"
+                android:hint="Anschaffungsdatum"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/view_herstellerName"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Hersteller ( Name )" />
+
+            <EditText
+                android:id="@+id/herstellerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hersteller ( Name )"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/view_kaufpreis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kaufpreis ( in Tausend Euro )"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/kaufpreis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kaufpreis ( in Tausend Euro )"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/view_einsatzort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Einsatzort"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/einsatzort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Einsatzort" />
+
+            <TextView
+                android:id="@+id/view_betriebsdauer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Betriebsdauer in Stunden"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/betriebsdauer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Betriebsdauer in Stunden"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/view_virtuelleKraftwerkID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Virtuelle Kraftwerk ID"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:id="@+id/virtuelleKraftwerkID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Virtuelle Kraftwerk ID" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="135dp"
+                android:text="Submit" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
