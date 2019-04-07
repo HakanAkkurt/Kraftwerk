@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class MainView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_view);
 
+        TextView message = findViewById(R.id.message);
+
+        //Willkommensnachricht mit Virtuelle Kraftwerk ID ausgeben
+
+        message.setText("Kraftwerk: " + Globals.getvKraftwerkId()+ "!");
         this.listView = findViewById(R.id.ListView_Tasks);
 
         this.dataSource = KraftwerkDatabase.getInstance(this).readAllKraftwerke("NONE");
@@ -89,10 +95,10 @@ public class MainView extends AppCompatActivity {
         super.onResume();
     }
 
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        moveTaskToBack(true);
+//    }
 
     public void refreshListView() {
         dataSource.clear();

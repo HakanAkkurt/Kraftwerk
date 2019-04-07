@@ -11,15 +11,15 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * Created by Hakan Akkurt on 03.02.2017.
+ * Created by Hakan Akkurt on 06.04.2019.
  */
 
-/*Diese Klasse stellt uns eine SQL Datenbank für Todos zur Verfügung*/
+
 public class KraftwerkDatabase extends SQLiteOpenHelper {
     public static KraftwerkDatabase INSTANCE = null;
 
     private static final String DB_NAME = "KRAFTWERKE";
-    private static final int VERSION = 9;
+    private static final int VERSION = 10;
     private static final String TABLE_NAME = "kraftwerke";
 
     public static final String ID_COLUMN = "ID";
@@ -54,7 +54,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
                 + BILDDERANLAGE_COLUMN + " TEXT DEFAULT NULL, " + LEISTUNGINKW_COLUMN + " INTEGER DEFAULT NULL, "
                 + ANSCHAFFUNGSDATUM_COLUMN + " INTEGER DEFAULT NULL, " + HERSTELLERNAME_COLUMN + " TEXT DEFAULT NULL, "
                 + KAUFPREIS_COLUMN + " INTEGER DEFAULT NULL, " + EINSATZORT_COLUMN + " TEXT DEFAULT NULL, "
-                + BETRIEBSDAUER_COLUMN + " INTEGER DEFAULT NULL, " + VIRTUELLEKRAFTWERKID + " TEXT DEFAULT NULL)";
+                + BETRIEBSDAUER_COLUMN + " INTEGER DEFAULT NULL, " + VIRTUELLEKRAFTWERKID + " INTEGER)";
 
         sqLiteDatabase.execSQL(createQuery);
     }
@@ -79,7 +79,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
         values.put(KAUFPREIS_COLUMN, kraftwerk.getKaufpreis());
         values.put(EINSATZORT_COLUMN, kraftwerk.getEinsatzort());
         values.put(BETRIEBSDAUER_COLUMN, kraftwerk.getBetriebsdauer());
-        values.put(VIRTUELLEKRAFTWERKID, kraftwerk.getVirtuelleKraftwerkId());
+        values.put(VIRTUELLEKRAFTWERKID, Globals.getvKraftwerkId());
 
         long newID = database.insert(TABLE_NAME, null, values);
 
@@ -89,7 +89,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
 
     }
 
-    //Die Methode zum Auslesen von gespeicherten Todos
+
     public Kraftwerk readKraftwerk(final long id) {
         SQLiteDatabase database = this.getReadableDatabase();
         Cursor cursor = database.query(TABLE_NAME, new String[]{ID_COLUMN, TYPDERERZEUGUNGSANLAGE_COLUMN, BILDDERANLAGE_COLUMN, LEISTUNGINKW_COLUMN,
@@ -131,7 +131,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
         List<Kraftwerk> kraftwerke = new ArrayList<>();
         SQLiteDatabase database = this.getReadableDatabase();
 
-        String query ="SELECT * FROM " + TABLE_NAME;
+        String query ="SELECT * FROM " + TABLE_NAME + " WHERE virtuellekraftwerkid LIKE " + Globals.getvKraftwerkId();
 
         //Extra Parameter für das SQL Query hinzufügen
         switch (Parameter) {
@@ -176,7 +176,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
         values.put(KAUFPREIS_COLUMN, kraftwerk.getKaufpreis());
         values.put(EINSATZORT_COLUMN, kraftwerk.getEinsatzort());
         values.put(BETRIEBSDAUER_COLUMN, kraftwerk.getBetriebsdauer());
-        values.put(VIRTUELLEKRAFTWERKID, kraftwerk.getVirtuelleKraftwerkId());
+        //values.put(VIRTUELLEKRAFTWERKID, kraftwerk.getVirtuelleKraftwerkId());
 
 
         database.update(TABLE_NAME, values, ID_COLUMN + " = ?", new String[]{String.valueOf(kraftwerk.getId())});
@@ -189,7 +189,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
 
     public Cursor berechneSumme(){
         SQLiteDatabase database = this.getWritableDatabase();
-        Cursor res = database.rawQuery("SELECT SUM(leistunginkw) FROM " + TABLE_NAME, null);
+        Cursor res = database.rawQuery("SELECT SUM(leistunginkw) FROM " + TABLE_NAME  + " WHERE virtuellekraftwerkid LIKE " + Globals.getvKraftwerkId(), null);
         return res;
     }
 

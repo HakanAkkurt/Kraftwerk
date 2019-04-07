@@ -40,7 +40,7 @@ public class KraftwerkCreate extends AppCompatActivity implements TextWatcher, D
     private EditText kaufpreis;
     private EditText einsatzort;
     private EditText betriebsdauer;
-    private EditText virtuelleKraftwerkId;
+    private TextView virtuelleKraftwerkId;
     private ImageView bildDerAnlage;
     private Button submit;
     public static final int PICK_IMAGE = 1;
@@ -52,8 +52,6 @@ public class KraftwerkCreate extends AppCompatActivity implements TextWatcher, D
         setContentView(R.layout.activity_kraftwerk_create);
         KraftwerkCreate.context = getApplicationContext();
 
-
-
         this.kraftwerk = new Kraftwerk();
 
         this.bildDerAnlage = findViewById(R.id.bildDerAnlage);
@@ -64,6 +62,8 @@ public class KraftwerkCreate extends AppCompatActivity implements TextWatcher, D
         this.einsatzort = findViewById(R.id.einsatzort);
         this.betriebsdauer = findViewById(R.id.betriebsdauer);
         this.virtuelleKraftwerkId = findViewById(R.id.virtuelleKraftwerkID);
+
+        virtuelleKraftwerkId.setText(Globals.getvKraftwerkId());
 
         this.submit = findViewById(R.id.submit);
 
@@ -180,22 +180,6 @@ public class KraftwerkCreate extends AppCompatActivity implements TextWatcher, D
             }
         });
 
-        this.virtuelleKraftwerkId.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(final CharSequence charSequence, final int i, final int i1, final int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(final CharSequence charSequence, final int i, final int i1, final int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(final Editable editable) {
-                kraftwerk.setVirtuelleKraftwerkId(editable.toString().length() == 0 ? null : editable.toString());
-            }
-        });
 
         this.submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,7 +231,6 @@ public class KraftwerkCreate extends AppCompatActivity implements TextWatcher, D
             }
         }
     }
-
 
     public String SaveImage(Bitmap finalBitmap) {
 

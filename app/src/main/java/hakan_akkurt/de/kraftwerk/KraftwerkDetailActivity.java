@@ -39,7 +39,7 @@ public class KraftwerkDetailActivity extends AppCompatActivity implements TextWa
     private EditText kaufpreis;
     private EditText einsatzort;
     private EditText betriebsdauer;
-    private EditText virtuelleKraftwerkId;
+    private TextView virtuelleKraftwerkId;
     private Button update_button;
     private ImageView bildDerAnlage;
     public static final int PICK_IMAGE = 1;
@@ -85,7 +85,7 @@ public class KraftwerkDetailActivity extends AppCompatActivity implements TextWa
         kaufpreis.setText(kraftwerk.getKaufpreis() == null ? " -" : kraftwerk.getKaufpreis());
         einsatzort.setText(kraftwerk.getEinsatzort() == null ? "-" : kraftwerk.getEinsatzort());
         betriebsdauer.setText(kraftwerk.getBetriebsdauer() == null ? " -" : kraftwerk.getBetriebsdauer());
-        virtuelleKraftwerkId.setText(kraftwerk.getVirtuelleKraftwerkId() == null ? " -" : kraftwerk.getVirtuelleKraftwerkId());
+        virtuelleKraftwerkId.setText(Globals.getvKraftwerkId());
 
 
         this.anschaffungsdatum.setOnClickListener(new View.OnClickListener() {
@@ -200,22 +200,6 @@ public class KraftwerkDetailActivity extends AppCompatActivity implements TextWa
             }
         });
 
-        this.virtuelleKraftwerkId.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(final CharSequence charSequence, final int i, final int i1, final int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(final CharSequence charSequence, final int i, final int i1, final int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(final Editable editable) {
-                kraftwerk.setVirtuelleKraftwerkId(editable.toString().length() == 0 ? null : editable.toString());
-            }
-        });
 
         this.update_button.setOnClickListener(new View.OnClickListener() {
             @Override

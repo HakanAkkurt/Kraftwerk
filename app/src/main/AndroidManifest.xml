@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:configChanges="orientation|screenSize"
         android:theme="@style/AppTheme">
-        <activity android:name="hakan_akkurt.de.kraftwerk.MainView">
+        <activity android:name="hakan_akkurt.de.kraftwerk.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="hakan_akkurt.de.kraftwerk.MainView"/>
         <activity android:name="hakan_akkurt.de.kraftwerk.KraftwerkCreate" />
         <activity android:name="hakan_akkurt.de.kraftwerk.KraftwerkDetailActivity"></activity>
     </application>
