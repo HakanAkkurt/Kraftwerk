@@ -34,7 +34,7 @@ public class MainView extends AppCompatActivity {
 
         //Willkommensnachricht mit Virtuelle Kraftwerk ID ausgeben
 
-        message.setText("Kraftwerk: " + Globals.getvKraftwerkId()+ "!");
+        message.setText("Kraftwerk: " + Globals.getvKraftwerkId());
         this.listView = findViewById(R.id.ListView_Tasks);
 
         this.dataSource = KraftwerkDatabase.getInstance(this).readAllKraftwerke("NONE");
