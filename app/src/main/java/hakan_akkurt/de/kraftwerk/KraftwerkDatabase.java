@@ -19,7 +19,7 @@ public class KraftwerkDatabase extends SQLiteOpenHelper {
     public static KraftwerkDatabase INSTANCE = null;
 
     private static final String DB_NAME = "KRAFTWERKE";
-    private static final int VERSION = 10;
+    private static final int VERSION = 11;
     private static final String TABLE_NAME = "kraftwerke";
 
     public static final String ID_COLUMN = "ID";

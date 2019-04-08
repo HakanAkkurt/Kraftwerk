@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -6,17 +10,25 @@
     android:layout_height="match_parent"
     tools:context="hakan_akkurt.de.kraftwerk.MainActivity">
 
+    <ImageView
+        android:id="@+id/img_wind"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/windkraftanlage"/>
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="96dp"
+        android:layout_below="@+id/img_wind"
+        android:layout_marginTop="20dp"
         android:id="@+id/txt_vKwId"
         android:textAlignment="center"
-        android:hint="Virtuelle Kraftwerk ID" />
+        android:hint="Kraftwerkname" />
 
     <Button
         android:text="Login"
@@ -24,7 +36,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_vKwId"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/btn_login" />
 
+    <Button
+        android:text="Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/btn_create" />
+
 </RelativeLayout>
+</ScrollView>

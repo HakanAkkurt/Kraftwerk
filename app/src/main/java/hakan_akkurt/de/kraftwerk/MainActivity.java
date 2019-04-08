@@ -20,23 +20,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final EditText editTextVKW = findViewById(R.id.txt_vKwId);
 
         try {
             myDB = this.openOrCreateDatabase("KraftwerkApp", MODE_PRIVATE, null);
             myDB.execSQL("CREATE TABLE IF NOT EXISTS VKRAFTWERKIDS (id INTEGER PRIMARY KEY, name VARCHAR)");
-            myDB.execSQL("INSERT INTO VKRAFTWERKIDS (id, name) VALUES (100, 'KW1')");
-            myDB.execSQL("INSERT INTO VKRAFTWERKIDS (id, name) VALUES (200, 'KW2')");
-            myDB.execSQL("INSERT INTO VKRAFTWERKIDS (id, name) VALUES (300, 'KW3')");
 
         } catch (Exception e) {
             Log.e("Error", "Error", e);
         }
+        final Button createButton = findViewById(R.id.btn_create);
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String vkwId = editTextVKW.getText().toString();
+                myDB.execSQL("INSERT INTO VKRAFTWERKIDS (id, name) VALUES (NULL, '" + vkwId + "')");
+                Toast.makeText(MainActivity.this, vkwId + " wurde als Kraftwerk angelegt.", Toast.LENGTH_LONG).show();
+                //myDB.execSQL("DROP TABLE IF EXISTS VKRAFTWERKIDS");
+            }
+        });
 
         final Button button = findViewById(R.id.btn_login);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                final EditText editTextVKW = findViewById(R.id.txt_vKwId);
 
                 String vkwId = editTextVKW.getText().toString();
 
@@ -46,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     if (cursor.getCount() < 1)
                     {
                         cursor.close();
-                        Toast.makeText(getApplicationContext(), "Unbekannte virtuelle Kraftwerk ID", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Unbekannter Kraftwerkname", Toast.LENGTH_LONG).show();
                     }
 
                     cursor.moveToFirst();

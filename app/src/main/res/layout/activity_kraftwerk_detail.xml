@@ -28,12 +28,14 @@
 
         <TextView
             android:id="@+id/view_typDerErzeugungsanlage"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Typ der Erzeugungsanlage" />
 
         <EditText
             android:id="@+id/typDerErzeugungsanlage"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -42,12 +44,14 @@
 
         <TextView
             android:id="@+id/view_leistungInKw"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Leistung in KW" />
 
         <EditText
             android:id="@+id/leistungInKw"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -56,12 +60,14 @@
 
         <TextView
             android:id="@+id/view_anschaffungsdatum"
+            android:paddingLeft="10dp"
             android:layout_width="188dp"
             android:layout_height="wrap_content"
             android:text="Anschaffungsdatum" />
 
         <TextView
             android:id="@+id/anschaffungsdatum"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -72,12 +78,14 @@
 
         <TextView
             android:id="@+id/view_herstellerName"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:text="Hersteller ( Name )" />
 
         <EditText
             android:id="@+id/herstellerName"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Hersteller ( Name )"
@@ -85,6 +93,7 @@
 
         <TextView
             android:id="@+id/view_kaufpreis"
+            android:paddingLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kaufpreis ( in Tausend Euro )"
@@ -92,6 +101,7 @@
 
         <EditText
             android:id="@+id/kaufpreis"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Kaufpreis ( in Tausend Euro )"
@@ -99,6 +109,7 @@
 
         <TextView
             android:id="@+id/view_einsatzort"
+            android:paddingLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Einsatzort"
@@ -106,12 +117,14 @@
 
         <EditText
             android:id="@+id/einsatzort"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Einsatzort" />
 
         <TextView
             android:id="@+id/view_betriebsdauer"
+            android:paddingLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Betriebsdauer in Stunden"
@@ -119,6 +132,7 @@
 
         <EditText
             android:id="@+id/betriebsdauer"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Betriebsdauer in Stunden"
@@ -126,6 +140,7 @@
 
         <TextView
             android:id="@+id/view_virtuelleKraftwerkID"
+            android:paddingLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Virtuelle Kraftwerk ID"
@@ -133,6 +148,7 @@
 
         <TextView
             android:id="@+id/virtuelleKraftwerkID"
+            android:paddingLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Virtuelle Kraftwerk ID" />
